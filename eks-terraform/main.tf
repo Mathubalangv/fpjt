@@ -121,7 +121,7 @@ data "aws_subnet" "subnet-1" {
  vpc_id = data.aws_vpc.vpc.id
  filter {
     name = "tag:Name"
-    values = ["MyPublicSubnet01"]
+    values = ["Jumphost-subnet"]
  }
 }
 
@@ -129,14 +129,14 @@ data "aws_subnet" "subnet-2" {
  vpc_id = data.aws_vpc.vpc.id
  filter {
     name = "tag:Name"
-    values = ["MyPublicSubnet02"]
+    values = ["Jumphost-subnet"]
  }
 }
 data "aws_security_group" "selected" {
   vpc_id = data.aws_vpc.vpc.id
   filter {
     name = "tag:Name"
-    values = ["devops-project-veera"]
+    values = ["Jumphost-sg"]
  }
 }
 
